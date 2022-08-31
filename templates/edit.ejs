@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirection</title>
+
+    
+        <!-- BOOTSTRAP -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css
+        ">
+</head>
+<body>
+
+    <div class="container  w-50">
+        <h1>Edit Link</h1>
+    
+        <form class="d-flex flex-column" action="/edit<%=body.id%>" method="POST">
+            <input class="mb-2" type="text" name="title" required placeholder="title" value="<%=body.title%>">
+            <input class="mb-2" type="text" name="description" placeholder="description" value="<%=body.description%>">
+            <input class="mb-4" type="text" name="url" placeholder="url" required value="<%=body.url%>">
+    
+            <button class="btn btn-primary" type="submit">Edit</button>
+        </form>
+    
+        <% if (error) {%>
+            <div class=" alert alert-danger alert-dismissible mt-3">
+                
+               
+                
+                <strong>Error: </strong><%=error.message%>
+            </div>
+
+        <% } %>
+
+    </div>
+
+</body>
+</html>
